@@ -8,7 +8,7 @@ import { ChatlastmessageComponent } from './chatlastmessage/chatlastmessage.comp
 import { ChatdateComponent } from './chatdate/chatdate.component';
 import { ContactstatusComponent } from './contactstatus/contactstatus.component';
 import { MessageComponent } from './message/message.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { MessageComponent } from './message/message.component';
     MessageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     PrimarybuttonComponent,

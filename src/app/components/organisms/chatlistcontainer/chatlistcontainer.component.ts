@@ -1,4 +1,4 @@
-import { Component, Input,  Output, EventEmitter  } from '@angular/core';
+import { Component, Input,  Output, EventEmitter, OnInit } from '@angular/core';
 import { Chat } from 'src/app/models/Chat';
 import { ChatList } from 'src/app/models/ChatList';
 @Component({
@@ -6,7 +6,7 @@ import { ChatList } from 'src/app/models/ChatList';
   templateUrl: './chatlistcontainer.component.html',
   styleUrls: ['./chatlistcontainer.component.scss']
 })
-export class ChatlistcontainerComponent {
+export class ChatlistcontainerComponent implements OnInit  {
   @Input()
   placeholderSearch = '';
   @Input()
@@ -16,16 +16,21 @@ export class ChatlistcontainerComponent {
   @Input()
   chatlist?: ChatList[];
 
+  currentchatlist? : ChatList[];
+  ngOnInit() {
+
+    this.currentchatlist = this.chatlist;
+
+  }
+
 findlastmessage(chatcontent: Chat[]):string{
 
  return chatcontent.at(-1)!.Message;
 }
 findlastmessagedate(chatcontent: Chat[]):Date{
 
-
 return chatcontent.at(-1)!.Date;
 }
-
 
 chagecurrentchat(newItem: string) {
   this.newItemEvent.emit(newItem);
@@ -34,5 +39,12 @@ chagecurrentchat(newItem: string) {
 @Output() newItemEvent = new EventEmitter<string>();
 
 
+imputtextevent(event: string) {
+
+    this.currentchatlist = this.chatlist!.filter(element =>
+      element.ContactName.toLowerCase().includes(event.toLowerCase())
+      );
+
+}
 
 }

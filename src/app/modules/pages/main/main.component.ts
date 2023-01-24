@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChatList } from 'src/app/models/ChatList';
 import { User } from 'src/app/models/User';
 @Component({
@@ -6,7 +6,7 @@ import { User } from 'src/app/models/User';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
+export class MainComponent implements OnInit  {
 
   placeholderSearch = 'Search';
   placeholder = 'Write a message';
@@ -23,16 +23,27 @@ export class MainComponent {
   currentchat?: ChatList;
 
   ngOnInit(): void {
-
     this.currentchat = this.user.Chatlist[0];
-
   }
 
-
   chagecurrentchat(newItem: string) {
-
     this.currentchat = this.user.Chatlist.filter(element =>  element.ContactName == newItem
     )[0];
+  }
+  sendmessage(newMessage: string) {
+
+    this.user.Chatlist.forEach(element => {
+      if ( element.ContactId == this.currentchat?.ContactId){
+
+      element.ChatMessageList.push({
+        Id: element.ChatMessageList.length + 1,
+        Message: newMessage,
+        Date: new Date() ,
+        Type: "sended"
+      }
+        )
+
+    }});
 
   }
 
@@ -62,16 +73,12 @@ export class MainComponent {
       Date:  new Date("1812/07/05"),
       Type: "recived"
     },
-
     {
       Id: 5,
       Message: "Entschuldigung falches chat",
       Date:  new Date("1812/07/05"),
       Type: "recived"
     }
-
-
-
   ]
   },
   {

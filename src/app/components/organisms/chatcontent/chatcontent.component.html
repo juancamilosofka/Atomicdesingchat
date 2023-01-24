@@ -10,9 +10,14 @@
 
   <app-currentchat [messagelist] = "chatlist?.ChatMessageList"></app-currentchat>
 
-  <app-createmessage class="mt-auto" [placeholder] = "placeholder" [sendbuttonicon] = "sendbuttonicon"
+  <app-createmessage class="mt-auto"
+  [placeholder] = "placeholder"
+  [sendbuttonicon] = "sendbuttonicon"
   [atachbuttonicon] = "atachbuttonicon"
   [emojibuttonicon] = "emojibuttonicon"
   [micbuttonicon] = "micbuttonicon"
+
+  (newItemEvent)="sendmessage($event)"
+
   ></app-createmessage>
 </div>

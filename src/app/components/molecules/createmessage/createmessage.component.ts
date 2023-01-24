@@ -1,4 +1,4 @@
-import { Component ,Input} from '@angular/core';
+import { Component ,Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-createmessage',
@@ -11,4 +11,18 @@ export class CreatemessageComponent {
   @Input() emojibuttonicon: string = '';
   @Input() atachbuttonicon: string = '';
   @Input() placeholder: string = '';
+
+
+  currentinputtext: string = '';
+
+
+  imputtextevent(event: string) {
+    this.currentinputtext = event;
+  }
+
+  @Output() newItemEvent = new EventEmitter<string>();
+  sendmessage() {
+
+    this.newItemEvent.emit(this.currentinputtext);
+  }
 }

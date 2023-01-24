@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-primaryinput',
@@ -9,4 +9,12 @@ export class PrimaryinputComponent {
 
   @Input()
   placeholder: string = '';
+
+  imputtext: string = '';
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  imputtextevent(event: any) {
+  this.newItemEvent.emit(this.imputtext);
+}
 }

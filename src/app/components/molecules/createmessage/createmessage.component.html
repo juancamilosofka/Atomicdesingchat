@@ -1,8 +1,8 @@
 <div class="input-group">
 
   <app-primarybutton class="glyphicon glyphicon-user" [icon] = "atachbuttonicon">  </app-primarybutton>
-  <app-primaryinput  class="form-control modified" [placeholder] = "placeholder"></app-primaryinput>
-  <app-primarybutton class="glyphicon glyphicon-user" [icon] = "sendbuttonicon">  </app-primarybutton>
+  <app-primaryinput   (newItemEvent)="imputtextevent($event)"  class="form-control modified" [placeholder] = "placeholder"></app-primaryinput>
+  <app-primarybutton (click)="sendmessage()" class="glyphicon glyphicon-user" [icon] = "sendbuttonicon">  </app-primarybutton>
   <app-primarybutton class="glyphicon glyphicon-user" [icon] = "emojibuttonicon">  </app-primarybutton>
   <app-primarybutton class="glyphicon glyphicon-user" [icon] = "micbuttonicon">  </app-primarybutton>
 

@@ -1,6 +1,9 @@
 
-<app-searchbar [placeholder] = "placeholderSearch"  [buttonicon] = "buttonicon"></app-searchbar>
-<div *ngFor="let chat of chatlist">
+<app-searchbar
+(newItemEvent)="imputtextevent($event)"
+[placeholder] = "placeholderSearch"
+ [buttonicon] = "buttonicon"></app-searchbar>
+<div *ngFor="let chat of currentchatlist">
 <app-chatcard
 [photo] = "chat.ContactImageUrl"
 [username] = "chat.ContactName"

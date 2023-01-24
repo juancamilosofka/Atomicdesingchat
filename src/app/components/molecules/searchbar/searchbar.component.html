@@ -1,5 +1,10 @@
 <div class="input-group">
-  <app-primarybutton class="glyphicon glyphicon-user" [icon] = "buttonicon">  </app-primarybutton>
-  <app-primaryinput  class="form-control modified" [placeholder] = "placeholder"></app-primaryinput>
+  <app-primarybutton class="glyphicon glyphicon-user" [icon] = "buttonicon"
+  >  </app-primarybutton>
+  <app-primaryinput
+  class="form-control modified"
+  [placeholder] = "placeholder"
+  (newItemEvent)="imputtextevent($event)"
+  ></app-primaryinput>
 </div>
 

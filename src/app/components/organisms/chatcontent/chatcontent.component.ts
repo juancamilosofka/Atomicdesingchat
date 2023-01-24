@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output , EventEmitter} from '@angular/core';
 import { Chat } from 'src/app/models/Chat';
 import { ChatList } from 'src/app/models/ChatList';
 
@@ -31,8 +31,9 @@ export class ChatcontentComponent {
 
 
 
-
-  @Input()
-  photo1 = '';
-
+  @Output() newItemEvent = new EventEmitter<string>();
+  sendmessage(event: string) {
+    console.log(event);
+    this.newItemEvent.emit(event);
+  }
 }
