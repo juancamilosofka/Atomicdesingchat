@@ -1,0 +1,30 @@
+
+<div class="chatcontainer col-auto">
+  <div *ngFor="let chat of messagelist">
+
+    <div *ngIf = "isSended(chat.Type)">
+    <app-message class="messageright"
+    messagecolor = "#52baf6"
+    [messagecontent] = "chat.Message"
+    ></app-message>
+
+
+  </div>
+
+
+  <div *ngIf = "!isSended(chat.Type)">
+<br>
+    <app-message class="messageleft"
+    messagecolor = "white"
+    [messagecontent] = "chat.Message"
+
+    ></app-message>
+
+  </div>
+
+
+
+
+    </div>
+
+</div>

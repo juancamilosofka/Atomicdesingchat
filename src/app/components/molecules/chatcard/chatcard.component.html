@@ -1,0 +1,25 @@
+
+<button type="button" class="btn btn-light buttonmodifier" (click)="changechat()">
+
+
+<div class="row small text-muted mb-1 ">
+<div class="col-auto ">
+<app-avatar [photo] = "photo"></app-avatar>
+</div>
+<div class="col">
+  <div  class="row-left nopadding">
+  <app-chatname [username] ="username"></app-chatname></div>
+  <div class="row nopadding">
+  <app-chatlastmessage [lastmessage] = "lastmessage"></app-chatlastmessage>
+</div>
+</div>
+<div class="col-auto nopadding">
+  <div  class="row">
+     <app-chatdate [lastmessagedate] = "lastmessagedate"></app-chatdate></div>
+
+  <div  class="row"></div>
+</div>
+
+</div>
+
+</button>

@@ -1,0 +1,14 @@
+
+<app-searchbar [placeholder] = "placeholderSearch"  [buttonicon] = "buttonicon"></app-searchbar>
+<div *ngFor="let chat of chatlist">
+<app-chatcard
+[photo] = "chat.ContactImageUrl"
+[username] = "chat.ContactName"
+[lastmessage] = "findlastmessage(chat.ChatMessageList)"
+[lastmessagedate] = "findlastmessagedate(chat.ChatMessageList)"
+
+(newItemEvent)="chagecurrentchat($event)"
+
+></app-chatcard>
+</div>
+

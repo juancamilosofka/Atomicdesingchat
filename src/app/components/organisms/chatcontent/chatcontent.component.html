@@ -1,0 +1,18 @@
+
+<div class="containercontent">
+<app-currentchatbanner
+ [status] = "chatlist!.Status"
+ [username] = "chatlist!.ContactName"
+ [dotmenuicon] = "dotmenuicon"
+ [searchicon] = "searchicon"
+ ></app-currentchatbanner>
+
+
+  <app-currentchat [messagelist] = "chatlist?.ChatMessageList"></app-currentchat>
+
+  <app-createmessage class="mt-auto" [placeholder] = "placeholder" [sendbuttonicon] = "sendbuttonicon"
+  [atachbuttonicon] = "atachbuttonicon"
+  [emojibuttonicon] = "emojibuttonicon"
+  [micbuttonicon] = "micbuttonicon"
+  ></app-createmessage>
+</div>

@@ -1,0 +1,36 @@
+
+
+<div class="modal-body row maincontainer">
+  <div class="col-md-4 listcontainer">
+
+    <app-chatlistcontainer
+
+    [buttonicon] = "listbuttonicon"
+    [chatlist] =  "user.Chatlist"
+    [placeholderSearch] = 'placeholderSearch'
+
+    (newItemEvent)="chagecurrentchat($event)"
+
+    ></app-chatlistcontainer>
+  </div>
+  <div class="col-md">
+  <app-chatcontent
+
+  [chatlist] =  "currentchat"
+
+  [placeholder] = "placeholder"
+  [buttonicon] = "buttonicon"
+  [sendbuttonicon] = "sendbuttonicon"
+  [atachbuttonicon] = "atachbuttonicon"
+  [emojibuttonicon] = "emojibuttonicon"
+  [micbuttonicon] = "micbuttonicon"
+
+  [dotmenuicon] = "dotmenuicon"
+  [searchicon] = "searchicon"
+
+    ></app-chatcontent>
+
+    <!-- Your second column here -->
+  </div>
+</div>
+

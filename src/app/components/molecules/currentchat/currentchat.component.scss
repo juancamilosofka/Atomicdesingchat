@@ -1,0 +1,18 @@
+
+.chatcontainer{
+  background-image: url("../../../../assets/Images/green-feaders.jpg");
+  background-size: cover;
+  overflow-y: scroll;
+  height: 100%;
+
+}
+
+.messageleft{
+  clear: both;
+  float: left;
+}
+.messageright{
+  clear: both;
+  float:right;
+
+}
